@@ -110,7 +110,7 @@ function csrfLogin (options) {
     var passwordField = conf.get('loginPasswordField') || 'password'
 
     // need to set BOTH csrftoken cookie and csrfmiddlewaretoken input fields
-    var loginUrl = csrfInfo.url
+    var loginUrl = conf.get('loginPath')
     var form = {}
     form[csrfInfo.csrfName] = csrfInfo.csrf
     form[usernameField] = username
